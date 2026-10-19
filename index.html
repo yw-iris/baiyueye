@@ -757,9 +757,10 @@
   sizeSfx(); addEventListener('resize',sizeSfx);
   function spawnStars(x,y){
     var n=(innerWidth<760)?8:14;
-    for(var i=0;i<n;i++){ var ang=Math.random()*6.2832; var sp=1.2+Math.random()*3;
-      sfxParts.push({x:x,y:y,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-0.4,rot:Math.random()*6.2832,vr:(Math.random()-.5)*0.22,
+    for(var i=0;i<n;i++){ var ang=Math.random()*6.2832; var sp=0.5+Math.random()*1.6;
+      sfxParts.push({x:x,y:y,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-0.3,rot:Math.random()*6.2832,vr:(Math.random()-.5)*0.22,
         sz:4+Math.random()*8,life:1,dl:0.014+Math.random()*0.024}); }
+    sfxParts.push({x:x,y:y,vx:0,vy:0,rot:0,vr:0,sz:9+Math.random()*5,life:1,dl:0.06}); /* 点击点中心闪光 */
     if(!sfxRun){ sfxRun=true; requestAnimationFrame(sfxTick); }
   }
   function sfxTick(){
