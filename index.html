@@ -665,7 +665,10 @@
     nxt.classList.add('active');
     nxt.scrollTop=0;
     cur=i;
-    if(bgs.length){ for(var b=0;b<bgs.length;b++){ bgs[b].classList.toggle('on', b===i); } }
+    /* 页面i → 底图索引；末页「尾声」复用潮汐归宿底图(bg4)，与同主题呼应且不撞价格页 */
+    var bgMap=[0,1,2,3,4,5,4];
+    var bi=(i>=0&&i<bgMap.length)?bgMap[i]:(bgs.length-1);
+    if(bgs.length){ for(var b=0;b<bgs.length;b++){ bgs[b].classList.toggle('on', b===bi); } }
     if(idxEl) idxEl.textContent=String(i+1).padStart(2,'0');
     if(prog) prog.style.width=((i+1)/pages.length*100).toFixed(2)+'%';
     if(tapcue){
