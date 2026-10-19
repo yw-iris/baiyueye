@@ -520,7 +520,7 @@
       if(!running) return;
       ctx.clearRect(0,0,W,H);
       var g=geom();
-      var lakeY=H*0.58;
+      var lakeY=H*0.68;
       if(emitting && parts.length<MAX && g.r>4) spawn(g);
 
       ctx.globalCompositeOperation='lighter';
@@ -581,8 +581,8 @@
     }else{
       requestAnimationFrame(function(){ body.classList.add('launch'); });
       t1=setTimeout(function(){ emitting=true; },480);        // 月升起、银瀑倾泻
-      t2=setTimeout(function(){ emitting=false; },2200);       // 停止喷发
-      t3=setTimeout(finalize,3450);                           // 落湖飞溅结束 → 只留月亮
+      t2=setTimeout(function(){ emitting=false; },2450);       // 停止喷发（更长瀑布需更久填满）
+      t3=setTimeout(finalize,3850);                           // 落湖飞溅结束 → 只留月亮
       requestAnimationFrame(tick);
     }
 
