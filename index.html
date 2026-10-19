@@ -756,10 +756,10 @@
   function sizeSfx(){ sfx.width=Math.floor(innerWidth*dprS); sfx.height=Math.floor(innerHeight*dprS); sctx.setTransform(dprS,0,0,dprS,0,0); }
   sizeSfx(); addEventListener('resize',sizeSfx);
   function spawnStars(x,y){
-    var n=(innerWidth<760)?14:24;
-    for(var i=0;i<n;i++){ var ang=Math.random()*6.2832; var sp=2+Math.random()*5;
-      sfxParts.push({x:x,y:y,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-0.6,rot:Math.random()*6.2832,vr:(Math.random()-.5)*0.22,
-        sz:7+Math.random()*15,life:1,dl:0.012+Math.random()*0.022}); }
+    var n=(innerWidth<760)?8:14;
+    for(var i=0;i<n;i++){ var ang=Math.random()*6.2832; var sp=1.2+Math.random()*3;
+      sfxParts.push({x:x,y:y,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-0.4,rot:Math.random()*6.2832,vr:(Math.random()-.5)*0.22,
+        sz:4+Math.random()*8,life:1,dl:0.014+Math.random()*0.024}); }
     if(!sfxRun){ sfxRun=true; requestAnimationFrame(sfxTick); }
   }
   function sfxTick(){
