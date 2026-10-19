@@ -475,7 +475,7 @@
 
     var parts=[], splash=[], ripples=[];
     var running=true, emitting=false, done=false, finalized=false, surfaceA=0;
-    var MAX=mobile?420:820;
+    var MAX=mobile?260:480;
     var t1=null,t2=null,t3=null;
 
     function geom(){
@@ -484,7 +484,7 @@
     }
 
     function spawn(g){
-      var n=mobile?6:14;
+      var n=mobile?4:8;
       for(var i=0;i<n;i++){
         var u=(Math.random()+Math.random()+Math.random())/1.5-1;
         var big=Math.random()<0.05;
