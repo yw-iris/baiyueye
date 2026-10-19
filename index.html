@@ -206,6 +206,13 @@
     max-width:30em;text-shadow:0 0 1px rgba(255,255,255,.6),0 1px 8px rgba(3,6,16,.95),0 0 3px rgba(3,6,16,.85)}
   .terms div{position:relative;padding-left:1.1em}
   .terms div::before{content:"·";position:absolute;left:0;color:var(--gold);opacity:.9}
+  /* 须知页条款较长，单独收紧顶距与行距以免溢出 */
+  .page[data-n="03"] .wrap{padding-top:9vh;padding-bottom:5vh}
+  .page[data-n="03"] .en{display:none}
+  .page[data-n="03"] .desc{font-size:12px;margin:4px auto 0;opacity:.72}
+  .page[data-n="03"] .verse{margin-bottom:4px}
+  .page[data-n="03"] .terms{line-height:1.85;margin-top:12px;font-size:clamp(12.5px,1.7vw,16px)}
+  .page[data-n="03"] .warn{margin-top:14px}
 
   /* 警示句 */
   .warn{font-family:"Noto Serif SC",serif;font-weight:400;font-size:clamp(16px,2.6vw,22px);letter-spacing:.22em;
@@ -357,11 +364,12 @@
         <div class="desc">旧镜上刻着什么？无人知晓的谜底</div>
         <div class="terms">
           <div>喜雷请提前告知，踩暗雷概不负责</div>
-          <div>请告知我你的昵称，我想知道你的名字</div>
-          <div>婉拒未提前告知的直播</div>
+          <div>请告知我 你的昵称，我想知道你的名字</div>
+          <div>婉拒未提前告知的直播/录屏/整蛊，有需要可提前沟通，否则视为话术盗用，赔偿单价*10</div>
           <div>若有不适请说安全词“白月，停下”，我很在乎你的感受</div>
-          <div>0.5h 我会耐心等你说完想说的话，希望你也是</div>
-          <div>每次取单至少提前</div>
+          <div>0.5h过5min不退，1h过10min不退，默认回合制(单口和半单口需加价)，我会耐心等你说完想说的话，希望你也是</div>
+          <div>每次取单至少提前10min告知</div>
+          <div>下单默认恋人关系</div>
           <div>不认真读须知触雷默认送单不接受客诉</div>
         </div>
         <div class="warn">触碰禁忌者 · 永困此地</div>
