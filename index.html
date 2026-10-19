@@ -572,16 +572,16 @@
     function finalize(){
       if(finalized) return; finalized=true; done=true;
       body.classList.add('lit');                 // 飞溅结束后点亮封面，只留月亮
-      setTimeout(function(){ running=false; ctx.clearRect(0,0,W,H); },400);
+      setTimeout(function(){ running=false; ctx.clearRect(0,0,W,H); },350);
     }
 
     if(reduce){
       body.classList.remove('intro'); body.classList.add('lit'); running=false;
     }else{
       requestAnimationFrame(function(){ body.classList.add('launch'); });
-      t1=setTimeout(function(){ emitting=true; },400);        // 月升起、银瀑倾泻
-      t2=setTimeout(function(){ emitting=false; },3000);       // 停止喷发（慢速需更久填满）
-      t3=setTimeout(finalize,5800);                           // 落湖飞溅结束 → 只留月亮
+      t1=setTimeout(function(){ emitting=true; },250);        // 月升起、银瀑倾泻
+      t2=setTimeout(function(){ emitting=false; },2400);      // 停止喷发（慢速需更久填满）
+      t3=setTimeout(finalize,4800);                           // 落湖飞溅结束 → 只留月亮
       requestAnimationFrame(tick);
     }
 
