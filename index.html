@@ -493,7 +493,7 @@
           x:g.cx+u*g.r*0.86,
           y:g.bottom-g.r*0.10+Math.random()*8,
           vx:u*0.17+(Math.random()-.5)*0.12,
-          vy:(big?3.0:4.2)+Math.random()*3.4+Math.abs(u)*1.5,
+          vy:(big?3.4:4.8)+Math.random()*3.4+Math.abs(u)*1.5,
           s:big?(1.9+Math.random()*1.3):(0.36+Math.random()*1.05),
           a:big?0.62:(0.40+Math.random()*0.50),
           ph:Math.random()*6.283, ps:0.045+Math.random()*0.11,
@@ -527,7 +527,7 @@
       /* 银瀑光粒：落到湖面即飞溅 */
       for(var i=parts.length-1;i>=0;i--){
         var p=parts[i];
-        p.y+=p.vy; p.vy+=0.018;
+        p.y+=p.vy; p.vy+=0.020;
         p.dr+=0.022;
         p.x+=p.vx+Math.sin(p.dr)*0.16+(p.x-g.cx)*0.0011;
         p.ph+=p.ps;
@@ -580,9 +580,9 @@
       body.classList.remove('intro'); body.classList.add('lit'); running=false;
     }else{
       requestAnimationFrame(function(){ body.classList.add('launch'); });
-      t1=setTimeout(function(){ emitting=true; },480);        // 月升起、银瀑倾泻
-      t2=setTimeout(function(){ emitting=false; },3000);       // 停止喷发（到底部需更久填满）
-      t3=setTimeout(finalize,5200);                           // 落湖飞溅结束 → 只留月亮
+      t1=setTimeout(function(){ emitting=true; },400);        // 月升起、银瀑倾泻
+      t2=setTimeout(function(){ emitting=false; },2400);       // 停止喷发
+      t3=setTimeout(finalize,4400);                           // 落湖飞溅结束 → 只留月亮
       requestAnimationFrame(tick);
     }
 
